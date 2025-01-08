@@ -48,4 +48,8 @@ Ce projet est une application Spring Boot démonstrative utilisée pour explorer
 Une nouvelle table address a été créée dans la base de données H2 en mémoire. Cette table correspond à la classe Address que nous avons ajoutée et contient les colonnes id, creation, et content.
 
 5. **Faites une requête de type SELECT sur la table Adress**
-6. Oui, lorsque l'on exécute la requête SELECT * FROM Adress;, on voit bien toutes les données insérées depuis le fichier data.sql.
+ Oui, lorsque l'on exécute la requête SELECT * FROM Adress;, on voit bien toutes les données insérées depuis le fichier data.sql.
+
+6. **à quoi sert l'annotation @Autowired ?**
+
+L'annotation @Autowired dans Spring permet d'injecter automatiquement les dépendances dans une classe. Dans ce cas, elle injecte une instance de AddressRepository dans le contrôleur AddressController pour que le contrôleur puisse utiliser les méthodes de ce repository pour accéder aux données des adresses dans la base de données, sans avoir besoin de créer manuellement cette instance. Spring gère cette injection de manière transparente au moment de l'exécution.
