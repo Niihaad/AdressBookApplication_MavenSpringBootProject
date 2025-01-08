@@ -31,9 +31,13 @@ Ce projet est une application Spring Boot démonstrative utilisée pour explorer
 
 ---
 
-## Instructions pour exécuter le projet
+## Réponses aux quetsions du TP 
 
-1. Clonez le dépôt : 
-   ```bash
-   git clone <URL_DU_DEPOT>
-   cd demo
+1. **URL d'appel `/greeting` :**
+   L'URL d'appel est paramétrée avec l'annotation `@GetMapping("/greeting")` sur la méthode `greeting()` du contrôleur `HelloWorldController.java`.
+
+2. **Fichier HTML à afficher :**
+   Le fichier HTML à afficher est choisi par la ligne `return "greeting";`, qui indique à Spring Boot de rendre le fichier `greeting.html` situé dans le répertoire `src/main/resources/templates`.
+
+3. **Envoi du nom :**
+   Le nom est envoyé en tant que paramètre de requête, comme dans l'URL `http://localhost:8080/greeting?name=ENSIM`. Dans le contrôleur, il est récupéré grâce à l'annotation `@RequestParam(name="nameGET", required=false, defaultValue="World")`, et ajouté au modèle via `model.addAttribute("nomTemplate", nameGET);` pour être affiché dans la vue.
