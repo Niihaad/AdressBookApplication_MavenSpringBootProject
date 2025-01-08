@@ -46,3 +46,6 @@ Ce projet est une application Spring Boot démonstrative utilisée pour explorer
 4. **Avez-vous remarqué une différence dans la console H2 ?**
 
 Une nouvelle table address a été créée dans la base de données H2 en mémoire. Cette table correspond à la classe Address que nous avons ajoutée et contient les colonnes id, creation, et content.
+
+5. **Faites une requête de type SELECT sur la table Adress**
+6. Oui, lorsque l'on exécute la requête SELECT * FROM Adress;, on voit bien toutes les données insérées depuis le fichier data.sql.
