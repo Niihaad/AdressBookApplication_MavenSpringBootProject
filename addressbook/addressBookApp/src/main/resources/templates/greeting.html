@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Greeting</title>
+</head>
+<body>
+
+<!-- Remplacer le fragment body dans layout.html par ce contenu -->
+<div th:replace="~{layout :: body}">
+    <div th:with="content='~{greetingContent}'">
+        <h1>Welcome, <span th:text="${nomTemplate}"></span>!</h1>
+    </div>
+</div>
+
+</body>
+</html>
+
+<!-- Fragment Greeting -->
+<div th:fragment="greetingContent">
+    <h1>Welcome, <span th:text="${nomTemplate}"></span>!</h1>
+</div>
