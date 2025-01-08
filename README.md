@@ -40,4 +40,9 @@ Ce projet est une application Spring Boot démonstrative utilisée pour explorer
    Le fichier HTML à afficher est choisi par la ligne `return "greeting";`, qui indique à Spring Boot de rendre le fichier `greeting.html` situé dans le répertoire `src/main/resources/templates`.
 
 3. **Envoi du nom :**
-   Le nom est envoyé en tant que paramètre de requête, comme dans l'URL `http://localhost:8080/greeting?name=ENSIM`. Dans le contrôleur, il est récupéré grâce à l'annotation `@RequestParam(name="nameGET", required=false, defaultValue="World")`, et ajouté au modèle via `model.addAttribute("nomTemplate", nameGET);` pour être affiché dans la vue.
+   Le nom est envoyé en tant que paramètre de requête, comme dans l'URL `http://localhost:9090/greeting?name=ENSIM`. Dans le contrôleur, il est récupéré grâce à l'annotation `@RequestParam(name="nameGET", required=false, defaultValue="World")`, et ajouté au modèle via `model.addAttribute("nomTemplate", nameGET);` pour être affiché dans la vue.
+
+
+4. **Avez-vous remarqué une différence dans la console H2 ?**
+
+Une nouvelle table address a été créée dans la base de données H2 en mémoire. Cette table correspond à la classe Address que nous avons ajoutée et contient les colonnes id, creation, et content.
