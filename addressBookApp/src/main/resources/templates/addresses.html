@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Addresses</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .weather-info {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .address-info {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div th:replace="~{navbar}"></div>
+
+<div class="container mt-5">
+    <h1>Les différentes adresses</h1>
+    <ul th:each="address : ${allAddresses}">
+        <li>
+            <span th:text="${address.content}"></span> -
+            <span th:text="${address.author}"></span>
+        </li>
+    </ul>
+
+    <h2 class="mt-5">Obtenez la météo pour une adresse</h2>
+    <form action="/meteo" method="post" class="mt-3">
+        <div class="form-group">
+            <label for="address">Adresse :</label>
+            <input type="text" class="form-control" name="address" id="address" placeholder="Entrez une adresse">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Obtenir la météo</button>
+        </div>
+    </form>
+
+    <div class="weather-info" th:if="${weatherInfo != null}">
+        <h3>Température à l'adresse : <span th:text="${weatherInfo.temperature}"></span> °C</h3>
+        <p><span class="address-info">Adresse:</span> <span th:text="${weatherInfo.address}"></span></p>
+        <p><span class="address-info">Coordonnées:</span> Latitude: <span th:text="${weatherInfo.latitude}"></span>, Longitude: <span th:text="${weatherInfo.longitude}"></span></p>
+    </div>
+</div>
+
+</body>
+</html>
