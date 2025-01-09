@@ -53,3 +53,21 @@ Une nouvelle table address a été créée dans la base de données H2 en mémoi
 6. **à quoi sert l'annotation @Autowired ?**
 
 L'annotation @Autowired dans Spring permet d'injecter automatiquement les dépendances dans une classe. Dans ce cas, elle injecte une instance de AddressRepository dans le contrôleur AddressController pour que le contrôleur puisse utiliser les méthodes de ce repository pour accéder aux données des adresses dans la base de données, sans avoir besoin de créer manuellement cette instance. Spring gère cette injection de manière transparente au moment de l'exécution.
+
+7. ## Ajouter Bootstrap au projet
+
+### Méthode utilisée
+
+Pour inclure Bootstrap dans ce projet, nous avons utilisé la méthode du CDN, qui permet de charger Bootstrap directement depuis un serveur externe sans avoir à télécharger les fichiers manuellement.
+
+#### Étapes suivies :
+Dans le fichier principal nous avons ajouté les liens suivants dans la section `<head>` :```html
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+Nous avons ensuite utilisé les classes CSS de Bootstrap pour styliser les éléments. par exemple :
+
+<button class="btn btn-primary">btn utilisé</button>
+Pourquoi utiliser un CDN ?
+ Facilité d'intégration : aucun fichier à télécharger.
+ Chargement rapide : les fichiers Bootstrap sont souvent mis en cache par le navigateur.
+
