@@ -2,27 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Addresses</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
 
-<!-- Remplacer le fragment body dans layout.html par ce contenu -->
-<div th:replace="~{layout :: body}">
-    <div th:with="content='~{addressContent}'">
-        <h1>Les différentes adresses</h1>
-        <ul th:each="address : ${allAddresses}">
-            <li>
-                <span th:text="${address.content}"></span> -
-                <span th:text="${address.author}"></span>
-            </li>
-        </ul>
-    </div>
-</div>
+<!-- Inclure la navbar -->
+<div th:replace="~{navbar}"></div>
 
-</body>
-</html>
-
-<!-- Fragment Adresses -->
-<div th:fragment="addressContent">
+<!-- Contenu spécifique à cette page -->
+<div>
     <h1>Les différentes adresses</h1>
     <ul th:each="address : ${allAddresses}">
         <li>
@@ -31,3 +20,6 @@
         </li>
     </ul>
 </div>
+
+</body>
+</html>
