@@ -71,3 +71,62 @@ Pourquoi utiliser un CDN ?
  Facilité d'intégration : aucun fichier à télécharger.
  Chargement rapide : les fichiers Bootstrap sont souvent mis en cache par le navigateur.
 
+ 8.Réponses aux questions sur l'API MeteoConcept
+
+__ Faut-il une clé API pour appeler MeteoConcept ?
+   Une clé API est nécessaire pour chaque appel à l'API. Elle doit être incluse dans l'URL en tant que paramètre token.
+
+__ Quelle URL appeler ?
+      Pour récupérer les éphémérides (lever et coucher du soleil, phase lunaire) :
+
+https://api.meteo-concept.com/api/ephemeride/0?token=CLE_API
+
+Pour les prévisions météo journalières :
+
+   https://api.meteo-concept.com/api/forecast/daily?token=CLE_API
+
+__ Quelle méthode HTTP utiliser ?
+La méthode HTTP utilisée est GET.
+
+__ Comment passer les paramètres d'appels ?
+Les paramètres doivent être ajoutés à l'URL sous forme de chaîne de requête :
+
+   token : Clé API pour l'authentification.
+   day : (optionnel) Permet de spécifier le jour visé (exemple : 0 pour aujourd'hui, 1 pour demain).
+   lat et lon : (optionnel) Coordonnées GPS du lieu visé. Si elles ne sont pas spécifiées, la localisation par défaut du compte est utilisée.
+
+__ Exemple d'URL avec des paramètres :
+
+https://api.meteo-concept.com/api/forecast/daily?token=CLE_API&lat=48.112&lon=-1.6819
+
+__Où est l'information dont on a besoin dans la réponse ?
+
+ Pour afficher la température du lieu visé par les coordonnées GPS :
+ Les informations de température minimale et maximale se trouvent dans les nœuds tmin et tmax de la réponse obtenue depuis l'endpoint /forecast/daily.
+ Exemple de structure XML :
+
+<response>
+    <forecast>
+        <day>0</day>
+        <datetime>2025-01-09</datetime>
+        <tmin>-1</tmin>
+        <tmax>7</tmax>
+    </forecast>
+</response>
+
+__ Pour afficher la prévision de météo du lieu visé par les coordonnées GPS :
+La prévision météorologique est contenue dans les nœuds weather et probarain :
+
+ weather : Code représentant l'état du ciel.
+ probarain : Probabilité de pluie en pourcentage.
+ Exemple de structure XML :
+
+<response>
+    <forecast>
+        <day>0</day>
+        <datetime>2025-01-09</datetime>
+        <weather>12</weather>
+        <probarain>45</probarain>
+    </forecast>
+</response>
+
