@@ -130,3 +130,10 @@ La prévision météorologique est contenue dans les nœuds weather et probarain
     </forecast>
 </response>
 
+![image](https://github.com/user-attachments/assets/fae6ee5c-97f7-44c6-ba03-3d180ec163ae)
+
+![image](https://github.com/user-attachments/assets/5dba4860-e4a9-4434-ac20-99a65da7c9ff)
+![image](https://github.com/user-attachments/assets/44f44604-1ff0-4f1f-bc62-ca663f528adb)
+![image](https://github.com/user-attachments/assets/64484d51-9ab7-499e-ac91-a502af2d63a5)
+
+
