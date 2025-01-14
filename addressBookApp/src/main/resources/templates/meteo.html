@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Météo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1>Informations Météorologiques</h1>
+
+    <div>
+        <h3>Adresse :</h3>
+        <p><strong>Adresse : </strong><span th:text="${addressLabel}">Avenue de France 75013 Paris</span></p>
+        <p><strong>Ville : </strong><span th:text="${city}">Paris</span></p>
+        <p><strong>Code Postal : </strong><span th:text="${postcode}">75013</span></p>
+        <p><strong>Context : </strong><span th:text="${context}">75, Paris, Île-de-France</span></p>
+    </div>
+
+    <div class="mt-5">
+        <h3>Météo actuelle pour l'adresse :</h3>
+        <p th:text="${weatherInfo}">Chargement des données météo...</p>
+    </div>
+
+</div>
+
+</body>
+</html>

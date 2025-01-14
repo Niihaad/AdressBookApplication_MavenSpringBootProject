@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Greeting</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+
+<div th:replace="~{navbar}"></div>
+
+<!-- Contenu spécifique à cette page -->
+<div>
+    <h1>Welcome, <span th:text="${nomTemplate}"></span>!</h1>
+</div>
+
+</body>
+</html>
